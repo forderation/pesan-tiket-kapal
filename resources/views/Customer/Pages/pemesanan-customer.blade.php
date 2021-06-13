@@ -2,10 +2,9 @@
 
 @section('content')
 <div>
-    <a class="btn btn-lg btn-warning">{{Auth::guard('web')->user()->nama_user}}</a>
+    <a class="btn btn-lg btn-warning" href="{{route('customer.dashboard')}}">{{Auth::guard('web')->user()->nama_user}}</a>
     <a class="btn btn-lg btn-danger" href="{{route('customer.logout')}}">Logout </a>
     <a class="btn btn-lg btn-success" href="{{route('tiket.customer')}}">Tiket</span></a>
-
 </div>
 <br>
 @if (session('status'))
@@ -32,10 +31,9 @@
                     <p class="card-title text-muted  text-center">Waktu : {{$Speedboats->jam_berangkat}}</p>
                     <p class="card-title text-muted  text-center">Harga : {{$Speedboats->harga}}</p>
                     <p class="card-title text-muted  text-center">Rute : {{$Speedboats->rute}}</p>
-                    <h5 class="card-title text-muted  text-center">Pembayaran tiket pesanan dapat melalui ke nomor rekening berikut : <span class="badge badge-primary"> {{$Speedboats->no_rekening}}</span></h5>
                     <div class="dropdown-divider m-3"></div>
                     <div class="text-center mb-3">
-                        <button type="button" onclick="addPenumpang()" class="btn btn-primary">Tambah Penumpang</button>
+                        <button id="add_penumpang_btn" type="button" onclick="addPenumpang()" class="btn btn-primary">Tambah Penumpang</button>
                         <a href="{{route('pesan.order',$Speedboats->id)}}" class="btn btn-warning">Reset</a>
                     </div>
                     <section id="penumpang">
@@ -50,11 +48,24 @@
                         </div>
                         <div class="dropdown-divider m-3"></div>
                     </section>
+                    <section id="pesan_section">
+                        <div class="text-center">
+                            <button onclick="pesanSpeedboat()" class="btn-solid-lg" type="button"> Pesan </button>
+                        </div>
+                    </section>
                     <div class="dropdown-divider m-3"></div>
-                    <div class="text-center">
-                        Bukti Transfer <input type="file" name="bukti_transfer" class="mb-3" required>
-                        <button class="btn-solid-lg" type="submit"> Bayar ! </button>
-                    </div>
+                    <section id="no_rekening" hidden>
+                        <h4>Nomor Rekening</h4>
+                        <div class="form-group">
+                            <label for="">Silahkan melakukan pembayaran ke nomor rekening tersebut:</label>
+                            <input type="text" class="form-control" name="nama[]" placeholder="Nama" value="{{$Speedboats->no_rekening}}" disabled required>
+                        </div>
+                        <div class="dropdown-divider m-3"></div>
+                        <div class="text-center">
+                            Bukti Transfer <input type="file" name="bukti_transfer" class="mb-3" required>
+                            <button class="btn-solid-lg" type="submit"> Bayar </button>
+                        </div>
+                    </section>
                 </div>
             </form>
         </div>
@@ -75,6 +86,12 @@
 
     function addPenumpang() {
         $('#penumpang').append(templateForm);
+    }
+
+    function pesanSpeedboat() {
+        $('#pesan_section').attr("hidden", '');
+        $('#add_penumpang_btn').attr("disabled", '');
+        $('#no_rekening').removeAttr("hidden");
     }
 </script>
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <div>
-    <a class="btn btn-lg btn-warning">{{Auth::guard('web')->user()->nama_user}}</a>
+    <a class="btn btn-lg btn-warning" href="{{route('customer.dashboard')}}">{{Auth::guard('web')->user()->nama_user}}</a>
     <a class="btn btn-lg btn-danger" href="{{route('customer.logout')}}">Logout </a>
     <a class="btn btn-lg btn-success" href="{{route('tiket.customer')}}">Tiket</span></a>
 </div>

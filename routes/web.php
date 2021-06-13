@@ -14,10 +14,6 @@ use App\Http\Controllers\Admin\Auth\LoginAdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Admin Route
 Route::prefix('admin')->group(function () {
 
@@ -48,23 +44,21 @@ Route::prefix('customer')->group(function () {
     Route::get('login', 'App\Http\Controllers\Customer\Auth\LoginCustomerController@index')->name('customer.login.get');
     Route::post('login', 'App\Http\Controllers\Customer\Auth\LoginCustomerController@login')->name('customer.login.post');
     Route::get('logout', 'App\Http\Controllers\Customer\Auth\LoginCustomerController@logout')->name('customer.logout');
-
     Route::get('register', 'App\Http\Controllers\Customer\Auth\LoginCustomerController@showRegister')->name('customer.showRegister');
     Route::post('register', 'App\Http\Controllers\Customer\Auth\LoginCustomerController@register')->name('customer.register');
 
-    Route::prefix('dashboard-customer')->group(function () {
+    Route::middleware('auth')->prefix('dashboard-customer')->group(function () {
         Route::get('', 'App\Http\Controllers\Customer\DashboardCustomerController@index')->name('customer.dashboard');
         Route::get('pemesanan/{id}', 'App\Http\Controllers\Customer\PemesananController@index')->name('pesan.order');
         Route::post('pemesanan/{id}', 'App\Http\Controllers\Customer\PemesananController@store')->name('pesan.order1');
-
         Route::get('tiket', 'App\Http\Controllers\Customer\TiketCustomerController@index')->name('tiket.customer');
         Route::get('tiket/cetak-pdf', 'App\Http\Controllers\Customer\TiketCustomerController@cetak_pdf')->name('tiket.cetak');
-
     });
-
-
 });
 
+Route::get('/', function () {
+    return redirect(route('customer.index'));
+});
 
 //Auth admin
 // Route::get('admin/login', 'App\Http\Controllers\Admin\Auth\LoginAdminController@index')->name('adm1n_login_get')->middleware('guest');
