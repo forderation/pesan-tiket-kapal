@@ -39,15 +39,7 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{route('customer.index')}}">HALAMAN UTAMA</span></a>
                 </li>
-                
-                <!-- Dropdown Menu -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href=""><span class="item-text">Logout</span></a>
-                    </div>
-                </li> -->
-                <!-- end of dropdown menu -->
+
             </ul>
         </div>
     </nav> <!-- end of navbar -->
@@ -68,7 +60,7 @@
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </div> <!-- end of header-content -->
-    </header> <!-- end of header --> 
+    </header> <!-- end of header -->
     <!-- end of header -->
 
     <!-- Scripts -->

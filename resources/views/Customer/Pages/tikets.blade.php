@@ -42,8 +42,8 @@
                     <td>{{$pesanan->Penumpangs->count()}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="" class="btn btn-primary">Cetak Tiket</a>
-                            <a href="" class="btn btn-success">Lihat Tiket</a>
+                            <a href="{{route('tiket.cetak', ['id'=> $pesanan->id])}}" class="btn btn-primary">Cetak Tiket</a>
+                            <a href="{{route('tiket.detail', $pesanan->id)}}" class="btn btn-success">Detail Tiket</a>
                         </div>
                     </td>
                 </tr>

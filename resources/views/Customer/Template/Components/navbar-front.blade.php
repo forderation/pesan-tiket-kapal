@@ -8,8 +8,8 @@
     <!-- Website Title -->
     <title>Pelabuhan Tengkayu 1 Kota Tarakan</title>
 
-     <!-- Styles -->
-     <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="{{asset('front/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('front/css/fontawesome.css')}}" rel="stylesheet">
@@ -17,11 +17,11 @@
     <link href="{{asset('front/css/magnific-popup.css')}}" rel="stylesheet">
     <link href="{{asset('front/css/styles.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
-    
-    
+
+
 
     <!-- Favicon  -->
-    <link rel="icon" href="../../front/images/favicon.png">
+    <link rel="icon" href="{{asset('front/images/favicon.png')}}">
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
@@ -43,7 +43,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+        <!-- <a class="navbar-brand logo-image" href="index.html"><img src="navbar-front.blade" alt="alternative"></a> -->
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +57,7 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link page-scroll" href="#intro">INTRO</a>
                 </li>
                 <li class="nav-item">
@@ -68,22 +68,22 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#projects">PROJECTS</a>
-                </li>
+                </li> -->
 
                 <!-- Dropdown Menu -->
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
                     </div>
-                </li>
+                </li> -->
                 <!-- end of dropdown menu -->
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">CONTACT</a>
-                </li>
+                </li> -->
             </ul>
             <span class="nav-item social-icons">
                 <span class="fa-stack">
@@ -123,12 +123,10 @@
     <!-- end of header -->
 
     <!-- Description -->
-    <div class="cards-1">
+    <!-- <div class="cards-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
-                    <!-- Card -->
                     <div class="card">
                         <span class="fa-stack">
                             <span class="hexagon"></span>
@@ -139,9 +137,6 @@
                             <p>The starting point of any success story is knowing your current position in the business environment</p>
                         </div>
                     </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
                     <div class="card">
                         <span class="fa-stack">
                             <span class="hexagon"></span>
@@ -152,9 +147,6 @@
                             <p>After completing the environmental analysis the next stage is to design and plan your development strategy</p>
                         </div>
                     </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
                     <div class="card">
                         <span class="fa-stack">
                             <span class="hexagon"></span>
@@ -165,17 +157,15 @@
                             <p>In this phase you will focus on executing the actions plan and evaluating the results after each marketing campaign</p>
                         </div>
                     </div>
-                    <!-- end of card -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-1 -->
+                </div> 
+            </div>
+        </div> 
+    </div> -->
     <!-- end of description -->
 
 
-       <!-- Scripts -->
-       <script src="{{asset('front/js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <!-- Scripts -->
+    <script src="{{asset('front/js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="{{asset('front/js/popper.min.js')}}"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="{{asset('front/js/bootstrap.min.js')}}"></script> <!-- Bootstrap framework -->
     <script src="{{asset('front/js/jquery.easing.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->

@@ -18,11 +18,18 @@ class TiketCustomerController extends Controller
         return view('Customer.Pages.tikets', compact('pesanans'));
     }
 
-    public function cetak_pdf()
+    public function cetak_pdf($id)
     {
-        $Pesanans = Pesanan::all()->last();
-        $customPaper = array(10, 10, 280.00, 567.00);
-        $pdf = PDF::loadview('Customer.Pages.tiket_pdf', compact('Pesanans'))->setPaper($customPaper, 'landscape');
-        return $pdf->download('tiket-cetak-pdf.pdf');
+        $pesanan = Pesanan::findOrFail($id);
+        $customPaper = array(10, 10, 2000, 567.00);
+        $pdf = PDF::loadview('Customer.Pages.tiket_pdf', compact('pesanan'));
+        // $pdf->setPaper($customPaper, 'landscape');
+        return $pdf->stream("tiket-pesanan.pdf");
+    }
+
+    public function detail($id)
+    {
+        $pesanan = Pesanan::findOrFail($id);
+        return view('Customer.Pages.tiket', compact('pesanan'));
     }
 }
